@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Code-Haze</title>
+    <style>
+    @font-face {
+    font-family: 'T';
+    src: url('Tewahedo.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'T';
+        }
+
+        body {
+            background-image: url("Gut1.jpg");
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+        }
+    .holenav{
+            display: flex;
+            justify-content: center;
+    }
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 25px 50px;
+            background: transparent;
+            backdrop-filter: blur(20px) ;
+            background-image: linear-gradient(rgba(0,0,0,0.3),rgba(255,255,255,0.3));
+            position: fixed;
+            width: 95%;
+            top: 7px;
+            border-radius: 50px;
+            z-index: 1000;
+            overflow: hidden;
+        }
+      #logo{
+          width: 50px;
+          transform: scale(1.7);
+          background: darkslategray;
+          position: absolute;
+          left: 10px;
+          top: 2px;
+      }
+     
+        nav {
+            display: flex;
+            gap: 20px;
+            position: absolute;
+            right: 15px;
+            top: 20px;
+        }
+        nav a {
+            color: black;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: color 0.4s, transform 0.7s ;
+        }
+        nav a:hover {
+            color: darkslategray;
+            transform: scale(1.1);
+        }
+        #home {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            font-weight: bold;
+        }
+
+        .home h1 {
+            font-size: 3rem;
+            background: linear-gradient(90deg, darkslategrey, black, teal,darkslategrey);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-size: 200% auto;
+            display: inline block;
+            animation: Anim 3s infinite;
+        }
+     @keyframes Anim{
+         to{
+             background-position: -200% center;
+         }
+     }
+        .home p {
+            font-size: 1.5rem;
+            margin-top: 60px;
+            width: 300px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: darkslategrey;
+            color: black;
+            padding: 10px 20px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 20px;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            background: teal;
+        }
+        section {
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #about{
+            height: 100vh;
+            background: transparent;
+            color: silver;
+            font-size: 1.3rem;
+        }
+    .autoanimation{
+        animation: auton both;
+        animation-timeline: view(70% 10%);
+    }
+    @keyframes auton{
+        from{
+            opacity :0;
+            transform: translateY(200px) scale(0.3);
+        }
+        to{
+            opacity: 1;
+            transform: translateY(0) scale(1);
+        }
+    }
+    h2{
+        margin-top: 15px;
+    }
+   #about h3{
+        text-align: left;
+        text-decoration: underline solid 5px darkslategrey;
+    }
+    ul {
+        list-style-type: none;
+        padding: 15px 20px;
+    }
+    p a{
+        text-decoration: none;
+        font-weight: bold;
+        transition: all 2s; 
+        color: darkslategrey;
+    }
+    p a:hover{
+        color: teal;
+        font-size: 20px;
+    }
+    li{
+        background: transparent;
+        backdrop-filter: blur(20px) ;
+        background-image: linear-gradient(rgba(0,0,0,0.3),rgba(255,255,255,0.3));
+        padding: 15px;
+        border: 3px solid darkslategrey;
+        border-radius: 10px;
+    }
+        #services {
+            margin-top: 5px;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            height: 100vh;
+            background: silver;
+            width: 340px;
+            position: relative;
+            font-size: 1.5rem;
+        }
+    #services::after, #services::before{
+    content: '';
+    width: 100%;
+    height: 100%;
+    background:  conic-gradient(from var(--angle), transparent 50%, black);
+    position : absolute;
+    padding:  7px;
+    top: 50%;
+    left: 50%;
+    translate: -50% -50%;
+    z-index: -1;
+    animation :  2s spin linear infinite;
+  }
+#services::before{
+  filter: blur(50px);
+  opacity: .3;
+}
+@property --angle{
+    syntax : "<angle>";
+    inherits: false;
+    initial-value: 0deg;
+  }
+    @keyframes spin{
+        from{
+            --angle: 0deg;
+        }
+        to{
+            --angle: 360deg;
+        }
+    }
+   #services h2{
+       margin-bottom: 10px;
+   }
+    #services h3{
+       font-size: 25px;
+       margin-bottom: 10px;
+       margin-top: 20px;
+   }
+    #contact{
+        height: 90vh;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        position: relative;
+        padding: 10px 20px;
+    }
+    
+    #contact h2 {
+        position: absolute;
+        top: 170px;
+    }
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 65%;
+            height: 300px;
+            border-radius: 10px;
+            position: relative;
+            top: 300px;
+            background: darkslategrey;
+            padding: 10px 20px;
+        }
+     form::after,form::before{
+            background-image: conic-gradient(from var(--angle), transparent, darkslategrey,teal,maroon,navy);
+            position: absolute;
+            content: '';
+            width: 100%;
+            height: 100%;
+            top: 50%;
+            left: 50%;
+            translate: -50% -50%;
+            padding: 5px;
+            z-index: -1;
+            animation: spin 3s linear infinite ;
+     }
+        input, textarea{
+            margin: 15px 0;
+            padding: 10px 20px;
+            width: 100%;
+            border: 1px solid darkslategrey;
+            border-radius: 50px;
+            outline: none;
+            color: darkslategrey;
+        }
+
+        button {
+            background: transparent;
+            background: linear-gradient(90deg, darkslategrey, black, teal,darkslategrey);
+            background-clip: background;
+            -webkit-background-clip: background;
+            -webkit-text-fill-color:  silver;
+            background-size: 200% auto;
+            display: inline block;
+            animation: Anim 3s infinite;
+            border: none;
+            border-radius: 20px;
+            padding: 10px;
+            position: absolute;
+            bottom: 10px;
+            left: 75px;
+            color: silver;
+            cursor: pointer;
+            width: 50%;
+        }
+
+        button:hover {
+            background: teal;
+        }
+        footer {
+            height: 10vh;
+            text-align: center;
+            padding: 15px;
+            font-size: 1.3rem;
+            background: darkslategrey;
+            color: black;
+        }
+    footer p{
+    }
+    </style>
+</head>
+<body>
+
+    <div class="holenav">
+    <div class="nav-container">
+        <img id="logo" src="logo.png"/>
+        <nav>
+            <a href="#home">ቤት</a>
+            <a href="#about">ስለእኛ</a>
+            <a href="#services">አገልግሎት</a>
+            <a href="#contact">ያግኙን</a>
+        </nav>
+    </div>
+    </div>
+    <section id="home" class="home">
+        <h1>እንኳን በደህና ወደ ድረ-ገፃችን መጡ</h1>
+        <p>⨳ ስለ ተወዳጁ Demonslayer anime movie የሚፈልጉትን ያህል እውቀት ያግኙ</p>
+        <a href="#contact" class="btn">ጀምር</a>
+    </section>
+
+    <section class="autoanimation" id="about">
+        <h2>ስለ እኛ</h2>
+        <h3>ማን ነን?</h3><br>
+        <p>እኛ ኢትዮጲያ ውስጥ ካሉ ጥቂት የ anime movie አፍቃሪዎች መሀከል ስንሆን; በእውነቱ ሌላ እንደኛ በአንድነት የተቋቋመ ህብረት ባይኖርም በህዝቡ ንቃተ ህሊና ውስጥ ያለውን አልባሌ የዚህን ፊልም አይነት ምልከታ በነቂስ ነቅለን ለመጣል የተዘጋጀን ማህበር ነን ።</p><br><br>
+        <h3>ምን ያህል ሄደንበታል?</h3><br>
+         <p>በአሁኑ ሰአት እንቅስቃሴያችን የረገበ ቢሆንም በዚህ ሩብ አመት አቅደን ከተንቀሳቀስናቸው እቅዶች በአማካኝ 60በመቶ የሚሆነውን የተገበርን ሲሆን ከእነዚህም ውስጥ ጥቂቶቹ የሚከተሉት ናቸው ።<ul><br><li>፩, ከ18 አመት በታች በሆኑ ህፃናት ውስጥ በለጋ እድሜያቸው ፍቅሩን ማሳደር </li><br><li>፪,  በእርጅና ጊዜያቸው ያሉ አዛውንትን አስገድዶ እንዲያዩ ማድረግ/ምንም ስለማያመጡ/</li><br><li>፫, በዙሪያችን ያሉ ሰዎች ውስጥ በግልፅም ሆነ በስውር ስነ ልቦናዊ ጫና ማሳደር ፤</li><br><li>፬, በወጣትነት እድሜ ላይ የሚገኙ ሰዎች እና ፅንፍ የሆነ ተቃዋሚ እይታ ፣ ''ይህን ህፃናት ናቸው የሚመለከቱት'' በማለት ስማችንን የሚያጠለሹ ሰዎችን ከመንገድ ማስወጣት ብሎም ማስወገድ ፤</li></ul> </p>
+        <p>አመርቂ ውጤት አምጥተናል ባንልም እንደ እቅዳችን በጣም ገፍተንበታል ። ለተጨማሪ ጥያቄዎች ፦ <a href="#contact">ይመልከቱ</a></p>
+    </section>
+    <section id="services">
+        <h2>አገልግሎታችን</h2>
+                <h3>፩, የፊልሙን ዘርፍ ማነቃቃት</h3>
+                <p>በእውነቱ በሀገራችን በጣም የተዳከመ ዘርፍ ቢሆንም መስራት ባንችል እንኳን ህብረተሰቡ ከ መውቀስ እንዲታቀብ ማድረግ ብሎም የትምህርት እና እውቅና በህብረተሰቡ ውስጥ በተለያዩ ቦታዎች እየተዘዋወርን መፍጠር</p>
+        <br>
+                <h3>፪, በተለያዩ anime movies ዙሪያ ውይይት ማድረግ</h3>
+                <p>ዋናው ቆርጠን የተነሳንበትም ምክንያት ይህ በመሆኑ ፣ እርስ በእርስ ያለንን ፍቅር ማሳደግ መዝናናቱ እንዳለ ሆኖ፣ አዳዲስ anime ተኮር ዜናዎችን መቀባበል ወዘተ</p>     
+         <br>
+                <h3>፫, አዲስ ተተኪ አባላትን መፍጠር</h3>
+                <p>ህይወታቸውን በዋዛ በፈዛዛ ያሳለፉ ፣ የ Eren መስዋዕትነት፣ የ Luffy ተስፋ አለመቁረጥ ፣ የ Jin-woo Aura አራሽነት ፣ የ Tanjiro ፅናት ፣ የ Erwin ወኔ ፣ የ mei mei ውበት ፣ የ Thorfinn ጀግንነት፣ የ Kira ብልሀት፣ ሌላም ሌላም የማያውቁ መሀይሞችን በመጋበዝ ማብቃት ከብዙ ጥቂቶቹ ናቸው። </p>
+    </section>
+    <section id="contact">
+      <h2>እኛን ያግኙን</h2>
+        <form>
+            <input type="text" placeholder="ሙሉ ስም" required>
+            <input type="email" placeholder="ኢ-ሜይል" required>
+            <textarea placeholder="መልዕክት"></textarea>
+            <button onclick="alert('ይቅርታ, ይህ ድረገፅ Prototype ሲሆን ምንም አይነት Functionality የለውም!')" type="submit">ይላኩ</button>
+        </form>
+    </section>
+    <footer>
+        <p>Tel +251938252442 <br>Gmail Psychopaticdude@gmail.com <br>
+            &copy; 2025 Code-Haze All rights reserved.</p>
+    </footer>
+</body>
+</html>
